@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Dumper-Simple
 Version  : 0.11
-Release  : 7
+Release  : 8
 URL      : https://cpan.metacpan.org/authors/id/O/OV/OVID/Data-Dumper-Simple-0.11.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OV/OVID/Data-Dumper-Simple-0.11.tar.gz
 Summary  : Easily dump variables with names
