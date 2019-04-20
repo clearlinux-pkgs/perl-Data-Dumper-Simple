@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Dumper-Simple
 Version  : 0.11
-Release  : 10
+Release  : 11
 URL      : https://cpan.metacpan.org/authors/id/O/OV/OVID/Data-Dumper-Simple-0.11.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OV/OVID/Data-Dumper-Simple-0.11.tar.gz
 Summary  : Easily dump variables with names
@@ -22,6 +22,7 @@ To install this module type the following:
 Summary: dev components for the perl-Data-Dumper-Simple package.
 Group: Development
 Provides: perl-Data-Dumper-Simple-devel = %{version}-%{release}
+Requires: perl-Data-Dumper-Simple = %{version}-%{release}
 
 %description dev
 dev components for the perl-Data-Dumper-Simple package.
