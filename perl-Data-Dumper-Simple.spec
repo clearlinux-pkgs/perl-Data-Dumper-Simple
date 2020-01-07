@@ -4,12 +4,13 @@
 #
 Name     : perl-Data-Dumper-Simple
 Version  : 0.11
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/O/OV/OVID/Data-Dumper-Simple-0.11.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OV/OVID/Data-Dumper-Simple-0.11.tar.gz
 Summary  : Easily dump variables with names
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Data-Dumper-Simple-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -28,14 +29,24 @@ Requires: perl-Data-Dumper-Simple = %{version}-%{release}
 dev components for the perl-Data-Dumper-Simple package.
 
 
+%package perl
+Summary: perl components for the perl-Data-Dumper-Simple package.
+Group: Default
+Requires: perl-Data-Dumper-Simple = %{version}-%{release}
+
+%description perl
+perl components for the perl-Data-Dumper-Simple package.
+
+
 %prep
 %setup -q -n Data-Dumper-Simple-0.11
+cd %{_builddir}/Data-Dumper-Simple-0.11
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -45,7 +56,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -65,8 +76,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Data/Dumper/Simple.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Data::Dumper::Simple.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Data/Dumper/Simple.pm
