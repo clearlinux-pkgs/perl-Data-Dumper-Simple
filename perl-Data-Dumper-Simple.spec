@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Dumper-Simple
 Version  : 0.11
-Release  : 15
+Release  : 16
 URL      : https://cpan.metacpan.org/authors/id/O/OV/OVID/Data-Dumper-Simple-0.11.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/O/OV/OVID/Data-Dumper-Simple-0.11.tar.gz
 Summary  : Easily dump variables with names
@@ -83,4 +83,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Dumper/Simple.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Dumper/Simple.pm
